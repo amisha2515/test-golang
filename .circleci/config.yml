@@ -18,3 +18,6 @@ jobs:
       - run:
           name: display binary
           command: ls -lrt
+      - run:
+          name: Run binary
+          command: ./server
