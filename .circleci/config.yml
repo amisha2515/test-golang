@@ -22,14 +22,14 @@ jobs:
           name: Run binary
           command: ./server
   deployment:
-      working_directory: ~/repo
-      docker:
-        - image: circleci/golang:1.14.6
-      steps:
-        - checkout
-        - run: go get -u github.com/mitchellh/gox
-        - run: go get -u github.com/tcnksm/ghr
-       - run: go get -u github.com/stevenmatthewt/semantics
+    working_directory: ~/repo
+    docker:
+    - image: circleci/golang:1.14.6
+    steps:
+    - checkout
+    - run: go get -u github.com/mitchellh/gox
+    - run: go get -u github.com/tcnksm/ghr
+    - run: go get -u github.com/stevenmatthewt/semantics
    release:
    branch: master
    commands:
