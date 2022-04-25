@@ -30,13 +30,13 @@ deployment:
       - run: go get -u github.com/mitchellh/gox
       - run: go get -u github.com/tcnksm/ghr
       - run: go get -u github.com/stevenmatthewt/semantics
-     release:
-      branch: master
-      commands:
-      — go get github.com/mitchellh/gox
-      — go get github.com/tcnksm/ghr
-      — gox -ldflags "-X main.Version 'v1' -X main.BuildDate "210420220815” -output “server_{{.OS}}_{{.Arch}}"
-      — ghr -t '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' -u 'amisha2515'-r 'test-golang' --replace `git describe --tags` 
+    release:
+    branch: master
+    commands:
+    — go get github.com/mitchellh/gox
+    — go get github.com/tcnksm/ghr
+    — gox -ldflags "-X main.Version 'v1' -X main.BuildDate "210420220815” -output “server_{{.OS}}_{{.Arch}}"
+    — ghr -t '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' -u 'amisha2515'-r 'test-golang' --replace `git describe --tags` 
 workflows:
   version: 2.1
   build-deployment:
